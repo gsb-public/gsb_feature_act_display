@@ -5,3 +5,10 @@
  */
 
 include_once 'gsb_feature_act_display.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
+  unset($form['field_act_status_value']['#options']['All']);
+}
