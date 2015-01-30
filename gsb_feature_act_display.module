@@ -17,7 +17,7 @@ function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
   // Alter 'ACT Project filters' content pane settings form.
   if ($form_id == 'views_content_views_panes_content_type_edit_form' && $form_state['pane']->subtype == 'act_project_filters-act_project_filters_pane') {
     //$form['exposed']['widget_title']['#field_prefix'] = 'Block Title';
-    $form['arguments']['nid']['#description'] = '';
+    $form['arguments']['nid']['#description'] = 'Separate Node IDs with commas and no spaces.';
     $form['exposed']['filter-field_act_status_value']['#description'] = 'leave blank to display all';
     $form['exposed']['arguments'] = $form['arguments'];
     $form['arguments']['#access'] = FALSE;
@@ -25,5 +25,12 @@ function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
     $form['exposed']['arguments']['#weight'] = -98;
     $form['context']['#access'] = FALSE;
     $form['fields_override']['title']['#access'] = FALSE;
+    $form['fields_override']['field_act_org_location']['#default_value'] = FALSE;
+    $form['fields_override']['field_link_single']['#default_value'] = FALSE;
+    $form['fields_override']['field_act_round']['#default_value'] = FALSE;
+    $form['fields_override']['field_location']['#default_value'] = FALSE;
+    $form['fields_override']['field_act_project_type']['#default_value'] = FALSE;
+    $form['fields_override']['field_act_project_focus']['#default_value'] = FALSE;
+    $form['fields_override']['field_act_organization_type']['#default_value'] = FALSE;
   }
 }

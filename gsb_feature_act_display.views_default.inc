@@ -413,7 +413,7 @@ function gsb_feature_act_display_views_default_views() {
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Multiple Node ID',
+      'label' => 'Node IDs',
     ),
   );
   $export['act_project_filters'] = $view;
