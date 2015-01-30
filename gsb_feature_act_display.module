@@ -25,6 +25,5 @@ function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
     $form['exposed']['arguments']['#weight'] = -98;
     $form['context']['#access'] = FALSE;
     $form['fields_override']['title']['#access'] = FALSE;
-    $form['fields_override']['#weight'] = -100;
   }
 }

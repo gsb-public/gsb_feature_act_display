@@ -172,7 +172,6 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'act' => 'act',
-    'book' => 'book',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Project Status (field_act_status) */
