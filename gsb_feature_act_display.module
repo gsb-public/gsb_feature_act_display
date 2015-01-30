@@ -10,5 +10,21 @@ include_once 'gsb_feature_act_display.features.inc';
  * Implements hook_form_alter().
  */
 function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
-  unset($form['field_act_status_value']['#options']['All']);
+  if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'gsb_act_project_listing' && $form_state['view']->display_handler->display->id == 'panel_pane_1') {
+    unset($form['field_act_status_value']['#options']['All']);
+  }
+
+  // Alter 'ACT Project filters' content pane settings form.
+  if ($form_id == 'views_content_views_panes_content_type_edit_form' && $form_state['pane']->subtype == 'act_project_filters-act_project_filters_pane') {
+    //$form['exposed']['widget_title']['#field_prefix'] = 'Block Title';
+    $form['arguments']['nid']['#description'] = '';
+    $form['exposed']['filter-field_act_status_value']['#description'] = 'leave blank to display all';
+    $form['exposed']['arguments'] = $form['arguments'];
+    $form['arguments']['#access'] = FALSE;
+    $form['exposed']['filter-title']['#weight'] = -99;
+    $form['exposed']['arguments']['#weight'] = -98;
+    $form['context']['#access'] = FALSE;
+    $form['fields_override']['title']['#access'] = FALSE;
+    $form['fields_override']['#weight'] = -100;
+  }
 }

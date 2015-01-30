@@ -33,21 +33,7 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'ds';
-  $handler->display->display_options['row_options']['view_mode'] = 'views_content_pane';
-  $handler->display->display_options['row_options']['alternating'] = 0;
-  $handler->display->display_options['row_options']['grouping'] = 0;
-  $handler->display->display_options['row_options']['advanced'] = 0;
-  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
-  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_year_of_publication|field_year_of_publication_value';
-  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'views_content_pane';
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['label'] = 'See All ACT Projects';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="see-all"><a href="/faculty-research/books">See All ACT Projects</a></div>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -55,6 +41,107 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Organization Location */
+  $handler->display->display_options['fields']['field_act_org_location']['id'] = 'field_act_org_location';
+  $handler->display->display_options['fields']['field_act_org_location']['table'] = 'field_data_field_act_org_location';
+  $handler->display->display_options['fields']['field_act_org_location']['field'] = 'field_act_org_location';
+  $handler->display->display_options['fields']['field_act_org_location']['ui_name'] = 'Organization Location';
+  $handler->display->display_options['fields']['field_act_org_location']['label'] = '';
+  $handler->display->display_options['fields']['field_act_org_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_org_location']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: URL */
+  $handler->display->display_options['fields']['field_link_single']['id'] = 'field_link_single';
+  $handler->display->display_options['fields']['field_link_single']['table'] = 'field_data_field_link_single';
+  $handler->display->display_options['fields']['field_link_single']['field'] = 'field_link_single';
+  $handler->display->display_options['fields']['field_link_single']['ui_name'] = 'URL';
+  $handler->display->display_options['fields']['field_link_single']['label'] = '';
+  $handler->display->display_options['fields']['field_link_single']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_single']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_single']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Round */
+  $handler->display->display_options['fields']['field_act_round']['id'] = 'field_act_round';
+  $handler->display->display_options['fields']['field_act_round']['table'] = 'field_data_field_act_round';
+  $handler->display->display_options['fields']['field_act_round']['field'] = 'field_act_round';
+  $handler->display->display_options['fields']['field_act_round']['ui_name'] = 'Round';
+  $handler->display->display_options['fields']['field_act_round']['label'] = '';
+  $handler->display->display_options['fields']['field_act_round']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_round']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Project Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['ui_name'] = 'Project Location';
+  $handler->display->display_options['fields']['field_location']['label'] = '';
+  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_location']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Project Type */
+  $handler->display->display_options['fields']['field_act_project_type']['id'] = 'field_act_project_type';
+  $handler->display->display_options['fields']['field_act_project_type']['table'] = 'field_data_field_act_project_type';
+  $handler->display->display_options['fields']['field_act_project_type']['field'] = 'field_act_project_type';
+  $handler->display->display_options['fields']['field_act_project_type']['ui_name'] = 'Project Type';
+  $handler->display->display_options['fields']['field_act_project_type']['label'] = '';
+  $handler->display->display_options['fields']['field_act_project_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_project_type']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Project Focus */
+  $handler->display->display_options['fields']['field_act_project_focus']['id'] = 'field_act_project_focus';
+  $handler->display->display_options['fields']['field_act_project_focus']['table'] = 'field_data_field_act_project_focus';
+  $handler->display->display_options['fields']['field_act_project_focus']['field'] = 'field_act_project_focus';
+  $handler->display->display_options['fields']['field_act_project_focus']['ui_name'] = 'Project Focus';
+  $handler->display->display_options['fields']['field_act_project_focus']['label'] = '';
+  $handler->display->display_options['fields']['field_act_project_focus']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_project_focus']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_act_project_focus']['delta_offset'] = '0';
+  /* Field: Organization Type */
+  $handler->display->display_options['fields']['field_act_organization_type']['id'] = 'field_act_organization_type';
+  $handler->display->display_options['fields']['field_act_organization_type']['table'] = 'field_data_field_act_organization_type';
+  $handler->display->display_options['fields']['field_act_organization_type']['field'] = 'field_act_organization_type';
+  $handler->display->display_options['fields']['field_act_organization_type']['ui_name'] = 'Organization Type';
+  $handler->display->display_options['fields']['field_act_organization_type']['label'] = '';
+  $handler->display->display_options['fields']['field_act_organization_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_organization_type']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_act_organization_type']['delta_offset'] = '0';
   /* Sort criterion: Content: Year (field_year_of_publication) */
   $handler->display->display_options['sorts']['field_year_of_publication_value']['id'] = 'field_year_of_publication_value';
   $handler->display->display_options['sorts']['field_year_of_publication_value']['table'] = 'field_data_field_year_of_publication';
@@ -267,7 +354,7 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['filters']['field_act_organization_type_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_act_organization_type_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_act_organization_type_tid']['expose']['operator_id'] = 'field_act_organization_type_tid_op';
-  $handler->display->display_options['filters']['field_act_organization_type_tid']['expose']['label'] = 'Organization Type (field_act_organization_type)';
+  $handler->display->display_options['filters']['field_act_organization_type_tid']['expose']['label'] = 'Organization Type';
   $handler->display->display_options['filters']['field_act_organization_type_tid']['expose']['operator'] = 'field_act_organization_type_tid_op';
   $handler->display->display_options['filters']['field_act_organization_type_tid']['expose']['identifier'] = 'field_act_organization_type_tid';
   $handler->display->display_options['filters']['field_act_organization_type_tid']['expose']['multiple'] = TRUE;
@@ -328,16 +415,12 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['exposed_form_configure'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 'fields_override';
   $handler->display->display_options['exposed_form_overrides'] = array(
-    'title' => '',
-    'field_person_fac_single_ref_target_id' => '',
-    'field_first_name_value' => '',
-    'field_last_name_value' => '',
-    'field_academic_area_unlimited_tid' => '',
-    'field_business_insight_topic_tid' => '',
-    'field_region_tid' => '',
-    'field_centers_research_programs_tid' => '',
+    'field_act_status_value' => '',
+    'field_act_project_type_tid' => '',
+    'field_act_project_focus_tid' => '',
+    'field_act_organization_type_tid' => '',
   );
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
