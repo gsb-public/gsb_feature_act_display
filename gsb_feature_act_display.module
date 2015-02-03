@@ -25,12 +25,14 @@ function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
     $form['exposed']['arguments']['#weight'] = -98;
     $form['context']['#access'] = FALSE;
     $form['fields_override']['title']['#access'] = FALSE;
-    $form['fields_override']['field_act_org_location']['#default_value'] = FALSE;
-    $form['fields_override']['field_link_single']['#default_value'] = FALSE;
-    $form['fields_override']['field_act_round']['#default_value'] = FALSE;
-    $form['fields_override']['field_location']['#default_value'] = FALSE;
-    $form['fields_override']['field_act_project_type']['#default_value'] = FALSE;
-    $form['fields_override']['field_act_project_focus']['#default_value'] = FALSE;
-    $form['fields_override']['field_act_organization_type']['#default_value'] = FALSE;
+    if ($form_state['op'] == 'add') {
+      $form['fields_override']['field_act_org_location']['#default_value'] = FALSE;
+      $form['fields_override']['field_link_single']['#default_value'] = FALSE;
+      $form['fields_override']['field_act_round']['#default_value'] = FALSE;
+      $form['fields_override']['field_location']['#default_value'] = FALSE;
+      $form['fields_override']['field_act_project_type']['#default_value'] = FALSE;
+      $form['fields_override']['field_act_project_focus']['#default_value'] = FALSE;
+      $form['fields_override']['field_act_organization_type']['#default_value'] = FALSE;
+    }
   }
 }
