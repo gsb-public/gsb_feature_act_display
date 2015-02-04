@@ -21,6 +21,7 @@ function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
     $form['exposed']['filter-field_act_status_value']['#description'] = 'leave blank to display all';
     $form['exposed']['arguments'] = $form['arguments'];
     $form['arguments']['#access'] = FALSE;
+    $form['#validate'][] = 'gsb_feature_act_display_form_validate';
     $form['exposed']['filter-title']['#weight'] = -99;
     $form['exposed']['arguments']['#weight'] = -98;
     $form['context']['#access'] = FALSE;
@@ -35,4 +36,9 @@ function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
       $form['fields_override']['field_act_organization_type']['#default_value'] = FALSE;
     }
   }
+}
+
+
+function gsb_feature_act_display_form_validate(&$form, &$form_state) {
+  $form_state['values']['arguments']['nid'] = $form_state['values']['exposed']['arguments']['nid'];
 }
