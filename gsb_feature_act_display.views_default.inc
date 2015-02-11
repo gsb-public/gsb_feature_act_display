@@ -33,14 +33,8 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'ds';
-  $handler->display->display_options['row_options']['view_mode'] = 'act_project_by_criteria';
-  $handler->display->display_options['row_options']['alternating'] = 0;
-  $handler->display->display_options['row_options']['grouping'] = 0;
-  $handler->display->display_options['row_options']['advanced'] = 0;
-  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
-  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'node|title';
-  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'act_project_by_criteria';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -48,6 +42,8 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Organization Location */
   $handler->display->display_options['fields']['field_act_org_location']['id'] = 'field_act_org_location';
   $handler->display->display_options['fields']['field_act_org_location']['table'] = 'field_data_field_act_org_location';
@@ -55,6 +51,7 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['field_act_org_location']['ui_name'] = 'Organization Location';
   $handler->display->display_options['fields']['field_act_org_location']['label'] = '';
   $handler->display->display_options['fields']['field_act_org_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_org_location']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_act_org_location']['settings'] = array(
     'conditions' => array(
       0 => array(
@@ -70,6 +67,7 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['field_link_single']['label'] = '';
   $handler->display->display_options['fields']['field_link_single']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_link_single']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_single']['type'] = 'link_plain';
   $handler->display->display_options['fields']['field_link_single']['settings'] = array(
     'conditions' => array(
       0 => array(
@@ -82,8 +80,10 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['field_act_round']['table'] = 'field_data_field_act_round';
   $handler->display->display_options['fields']['field_act_round']['field'] = 'field_act_round';
   $handler->display->display_options['fields']['field_act_round']['ui_name'] = 'Round';
-  $handler->display->display_options['fields']['field_act_round']['label'] = '';
+  $handler->display->display_options['fields']['field_act_round']['label'] = 'Round –';
+  $handler->display->display_options['fields']['field_act_round']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_act_round']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_round']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_act_round']['settings'] = array(
     'conditions' => array(
       0 => array(
@@ -96,7 +96,8 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['ui_name'] = 'Project Location';
-  $handler->display->display_options['fields']['field_location']['label'] = '';
+  $handler->display->display_options['fields']['field_location']['label'] = 'Project Location –';
+  $handler->display->display_options['fields']['field_location']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_location']['settings'] = array(
     'conditions' => array(
@@ -110,8 +111,10 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['field_act_project_type']['table'] = 'field_data_field_act_project_type';
   $handler->display->display_options['fields']['field_act_project_type']['field'] = 'field_act_project_type';
   $handler->display->display_options['fields']['field_act_project_type']['ui_name'] = 'Project Type';
-  $handler->display->display_options['fields']['field_act_project_type']['label'] = '';
+  $handler->display->display_options['fields']['field_act_project_type']['label'] = 'Project Type –';
+  $handler->display->display_options['fields']['field_act_project_type']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_act_project_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_project_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_act_project_type']['settings'] = array(
     'conditions' => array(
       0 => array(
@@ -124,8 +127,10 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['field_act_project_focus']['table'] = 'field_data_field_act_project_focus';
   $handler->display->display_options['fields']['field_act_project_focus']['field'] = 'field_act_project_focus';
   $handler->display->display_options['fields']['field_act_project_focus']['ui_name'] = 'Project Focus';
-  $handler->display->display_options['fields']['field_act_project_focus']['label'] = '';
+  $handler->display->display_options['fields']['field_act_project_focus']['label'] = 'Project Focus –';
+  $handler->display->display_options['fields']['field_act_project_focus']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_act_project_focus']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_project_focus']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_act_project_focus']['settings'] = array(
     'conditions' => array(
       0 => array(
@@ -139,8 +144,10 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['fields']['field_act_organization_type']['table'] = 'field_data_field_act_organization_type';
   $handler->display->display_options['fields']['field_act_organization_type']['field'] = 'field_act_organization_type';
   $handler->display->display_options['fields']['field_act_organization_type']['ui_name'] = 'Organization Type';
-  $handler->display->display_options['fields']['field_act_organization_type']['label'] = '';
+  $handler->display->display_options['fields']['field_act_organization_type']['label'] = 'Organization Type –';
+  $handler->display->display_options['fields']['field_act_organization_type']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_act_organization_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_organization_type']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_act_organization_type']['settings'] = array(
     'conditions' => array(
       0 => array(
