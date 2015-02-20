@@ -1083,7 +1083,7 @@ Completed|Sample Completed Projects',
     191 => 0,
   );
   $handler->display->display_options['filters']['field_act_status_value']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['pane_title'] = 'ACT Projects  (In Progress)';
+  $handler->display->display_options['pane_title'] = 'ACT Projects (All)';
   $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
