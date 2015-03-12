@@ -27,6 +27,10 @@ function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
     $form['context']['#access'] = FALSE;
     $form['fields_override']['title']['#default_value'] = TRUE;
     $form['fields_override']['title']['#access'] = FALSE;
+    $form['fields_override']['field_act_organization_type_1']['#access'] = FALSE;
+    $form['fields_override']['nothing']['#title'] = t('Organization Type');
+    $form['fields_override']['field_act_project_focus']['#access'] = FALSE;
+    $form['fields_override']['nothing_1']['#title'] = t('Project Focus');
     if ($form_state['op'] == 'add') {
       $form['fields_override']['field_act_org_location']['#default_value'] = FALSE;
       $form['fields_override']['field_link_single']['#default_value'] = FALSE;
