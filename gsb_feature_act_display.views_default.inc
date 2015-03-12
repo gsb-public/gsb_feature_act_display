@@ -127,13 +127,13 @@ function gsb_feature_act_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Project Focus */
+  /* Field: Project Focus List */
   $handler->display->display_options['fields']['field_act_project_focus']['id'] = 'field_act_project_focus';
   $handler->display->display_options['fields']['field_act_project_focus']['table'] = 'field_data_field_act_project_focus';
   $handler->display->display_options['fields']['field_act_project_focus']['field'] = 'field_act_project_focus';
-  $handler->display->display_options['fields']['field_act_project_focus']['ui_name'] = 'Project Focus';
+  $handler->display->display_options['fields']['field_act_project_focus']['ui_name'] = 'Project Focus List';
   $handler->display->display_options['fields']['field_act_project_focus']['label'] = '';
-  $handler->display->display_options['fields']['field_act_project_focus']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_act_project_focus']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_act_project_focus']['alter']['text'] = '<span class="views-label">Project Focus – </span>[field_act_project_focus]';
   $handler->display->display_options['fields']['field_act_project_focus']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_act_project_focus']['hide_empty'] = TRUE;
@@ -146,25 +146,42 @@ function gsb_feature_act_display_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_act_project_focus']['delta_offset'] = '0';
-  /* Field: Organization Type */
-  $handler->display->display_options['fields']['field_act_organization_type']['id'] = 'field_act_organization_type';
-  $handler->display->display_options['fields']['field_act_organization_type']['table'] = 'field_data_field_act_organization_type';
-  $handler->display->display_options['fields']['field_act_organization_type']['field'] = 'field_act_organization_type';
-  $handler->display->display_options['fields']['field_act_organization_type']['ui_name'] = 'Organization Type';
-  $handler->display->display_options['fields']['field_act_organization_type']['label'] = '';
-  $handler->display->display_options['fields']['field_act_organization_type']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_act_organization_type']['alter']['text'] = '<span class="views-label">Organization Type – </span>[field_act_organization_type]';
-  $handler->display->display_options['fields']['field_act_organization_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_act_organization_type']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_act_organization_type']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_act_organization_type']['settings'] = array(
+  /* Field: Project Focus */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Project Focus';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'Project Focus - ';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_act_project_focus]';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  /* Field: Organization Type List */
+  $handler->display->display_options['fields']['field_act_organization_type_1']['id'] = 'field_act_organization_type_1';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['table'] = 'field_data_field_act_organization_type';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['field'] = 'field_act_organization_type';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['ui_name'] = 'Organization Type List';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['label'] = '';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_act_organization_type_1']['alter']['text'] = '<span class="views-label">Organization Type – </span>[field_act_organization_type_1]';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_act_organization_type_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['settings'] = array(
     'conditions' => array(
       0 => array(
         'condition' => '',
       ),
     ),
   );
-  $handler->display->display_options['fields']['field_act_organization_type']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_act_organization_type_1']['delta_offset'] = '0';
+  /* Field: Organization Type */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Organization Type';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Organization Type - ';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_act_organization_type_1]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
