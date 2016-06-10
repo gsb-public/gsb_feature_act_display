@@ -11,6 +11,16 @@ include_once 'gsb_feature_act_display.features.inc';
  */
 function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'gsb_act_project_listing' && $form_state['view']->display_handler->display->id == 'panel_pane_1') {
+    $form['secondary']['field_act_status_value']['#weight'] = -105;
+    $form['#action'] = '';
+    $form['secondary']['done'] = array(
+      '#type' => 'submit',
+      '#value' => t('Done'),
+    );
+    $form['secondary']['clear-all'] = array(
+      '#type' => 'button',
+      '#value' => t('Clear All'),
+    );
     unset($form['field_act_status_value']['#options']['All']);
   }
 }
@@ -26,7 +36,6 @@ function gsb_feature_act_display_form_views_content_views_panes_content_type_edi
 
   // Alter 'ACT Project filters' content pane settings form.
   if ($form_state['pane']->subtype == 'act_project_filters-act_project_filters_pane' && $form_state['view']->name == 'act_project_filters' && $form_state['view']->current_display == 'act_project_filters_pane') {
-
     //$form['exposed']['widget_title']['#field_prefix'] = 'Block Title';
     $form['arguments']['nid']['#description'] = 'Separate Node IDs with commas and no spaces.';
     $form['exposed']['filter-field_act_status_value']['#description'] = 'leave blank to display all';
