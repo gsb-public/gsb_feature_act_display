@@ -963,7 +963,6 @@ function gsb_feature_act_display_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Project List', 'panel_pane_1');
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
       'allow_secondary' => 1,
