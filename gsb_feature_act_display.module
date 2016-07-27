@@ -10,7 +10,8 @@ include_once 'gsb_feature_act_display.features.inc';
  * Implements hook_form_alter().
  */
 function gsb_feature_act_display_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'gsb_act_project_listing' && $form_state['view']->display_handler->display->id == 'panel_pane_1') {
+  $display_handler = array('panel_pane_1', 'panel_pane_2', 'panel_pane_3');
+  if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'gsb_act_project_listing' && (in_array($form_state['view']->display_handler->display->id, $display_handler))) {
     $form['secondary']['field_act_status_value']['#weight'] = -105;
     $form['#action'] = '';
     $form['secondary']['done'] = array(
