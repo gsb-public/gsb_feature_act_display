@@ -471,7 +471,6 @@ function gsb_feature_act_display_views_default_views() {
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
-  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
   $handler->display->display_options['exposed_form_overrides'] = array(
     'field_act_status_value' => '',
@@ -2073,7 +2072,6 @@ Completed|Sample Completed Projects',
     'completed' => 'completed',
   );
   $handler->display->display_options['filters']['field_act_status_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_act_status_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_act_status_value']['expose']['operator_id'] = 'field_act_status_value_op';
   $handler->display->display_options['filters']['field_act_status_value']['expose']['label'] = 'Show Only';
   $handler->display->display_options['filters']['field_act_status_value']['expose']['operator'] = 'field_act_status_value_op';
