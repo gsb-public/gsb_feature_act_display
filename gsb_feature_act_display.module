@@ -42,7 +42,9 @@ function gsb_feature_act_display_form_validate(&$form, &$form_state) {
 function gsb_feature_act_display_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state) {
 
   // Alter 'ACT Project filters' content pane settings form.
-  if ($form_state['pane']->subtype == 'act_project_filters-act_project_filters_pane' && $form_state['view']->name == 'act_project_filters' && $form_state['view']->current_display == 'act_project_filters_pane') {
+  if ($form_state['pane']->subtype == 'act_project_filters-act_project_filters_pane'
+    && $form_state['view']->name == 'act_project_filters'
+    && $form_state['view']->current_display == 'act_project_filters_pane') {
     //$form['exposed']['widget_title']['#field_prefix'] = 'Block Title';
     $form['arguments']['nid']['#description'] = 'Separate Node IDs with commas and no spaces.';
     $form['exposed']['filter-field_act_status_value']['#description'] = 'leave blank to display all';
@@ -89,7 +91,7 @@ function gsb_feature_act_display_form_views_content_views_panes_content_type_edi
       '#weight' => 2,
       '#default_value' => !empty($conf['cta_url']) ? $conf['cta_url'] : '',
     );
-    
+
     $form['#submit'][] = 'act_project_filters_pane_config_submit';
   }
 }
